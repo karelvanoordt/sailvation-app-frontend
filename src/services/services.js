@@ -5,55 +5,55 @@ import axios from "axios";
 const BACK_END_URL = 'https://pacific-lake-89990.herokuapp.com/api/v1';
 
 // GET ALL USERS
-const fetchAllUsers = async () => {
+export const fetchAllUsers = async () => {
   const usersData = await axios.get(`${BACK_END_URL}/users`);
   return usersData;
 };
 
 // POST NEW USER
-const postNewUser = async (newUserData) => {
+export const postNewUser = async (newUserData) => {
   const newUser = await axios.post(`${BACK_END_URL}/users`, newUserData);
   return newUser;
 };
 
 // GET ALL CRUISES
-const fetchAllCruises = async (userId) => {
+export const fetchAllCruises = async (userId) => {
   const cruiseData = await axios.get(`${BACK_END_URL}/users/${userId}/cruises`)
   return cruiseData;
 };
 
 // POST NEW CRUISE
-const postNewCruise = async (newCruiseData) => {
+export const postNewCruise = async (newCruiseData) => {
   const newCruise = await axios.post(`${BACK_END_URL}/users/${newCruiseData.user_id}/cruises`)
   return newCruise;
 };
 
 // DELETE A CRUSE
-const deleteCruise = async (userId, cruiseId) => {
+export const deleteCruise = async (userId, cruiseId) => {
   const deletedCruise = await axios.post(`${BACK_END_URL}/users/${userId}/cruises/${cruiseId}`);
   return deletedCruise;
 };
 
 // GET ALL RESERVATION
-const fetchAllReservations = async(userId) => {
+export const fetchAllReservations = async(userId) => {
   const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`)
   return reservationData;
 };
 
 // POST NEW RESERVATION
-const postNewReservation = async (newReservationData) => {
+export const postNewReservation = async (newReservationData) => {
   const newReservation = await axios.post(`${BACK_END_URL}/users/${newReservationData.user_id}/reservations`);
   return newReservation;
 };
 
 // DELETE A RESERVATION
-const deleteReservation = async (userId, reservationId) => {
+export const deleteReservation = async (userId, reservationId) => {
   const deletedReservation = await axios.post(`${BACK_END_URL}/users/${userId}/reservations/${reservationId}`);
   return deletedReservation;
 };
 
 // GET ALL DESTINATIONS
-const fetchAllDestinations = async (userId) => {
+export const fetchAllDestinations = async (userId) => {
   const destinationData = await axios.get(`${BACK_END_URL}/destinations`);
   return destinationData;
 }
