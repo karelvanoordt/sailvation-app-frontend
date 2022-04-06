@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 // const BACK_END_URL = 'http://127.0.0.1:3000/api/v1';
 // const BACK_END_URL = 'https://boiling-harbor-88832.herokuapp.com/api/v1';
@@ -18,13 +18,13 @@ export const postNewUser = async (newUserData) => {
 
 // GET ALL CRUISES
 export const fetchAllCruises = async (userId) => {
-  const cruiseData = await axios.get(`${BACK_END_URL}/users/${userId}/cruises`)
+  const cruiseData = await axios.get(`${BACK_END_URL}/users/${userId}/cruises`);
   return cruiseData;
 };
 
 // POST NEW CRUISE
 export const postNewCruise = async (newCruiseData) => {
-  const newCruise = await axios.post(`${BACK_END_URL}/users/${newCruiseData.user_id}/cruises`)
+  const newCruise = await axios.post(`${BACK_END_URL}/users/${newCruiseData.user_id}/cruises`);
   return newCruise;
 };
 
@@ -35,8 +35,8 @@ export const deleteCruise = async (userId, cruiseId) => {
 };
 
 // GET ALL RESERVATION
-export const fetchAllReservations = async(userId) => {
-  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`)
+export const fetchAllReservations = async (userId) => {
+  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`);
   return reservationData;
 };
 
@@ -53,10 +53,10 @@ export const deleteReservation = async (userId, reservationId) => {
 };
 
 // GET ALL DESTINATIONS
-export const fetchAllDestinations = async (userId) => {
+export const fetchAllDestinations = async () => {
   const destinationData = await axios.get(`${BACK_END_URL}/destinations`);
   return destinationData;
-}
+};
 
 export default {
   fetchAllUsers,

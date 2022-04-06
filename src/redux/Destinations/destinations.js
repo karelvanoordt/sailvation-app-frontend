@@ -8,7 +8,7 @@ export const fetchAllDestinations = (userId) => async (dispatch) => {
   const payload = await apiCalls.fetchAllDestinations(userId);
   dispatch({
     type: FETCH_ALL_DESTINATIONS,
-    payload
+    payload,
   });
 };
 
@@ -18,7 +18,7 @@ const destinationReducer = (state = initialDestinationState, action) => {
       return action.payload;
     default:
       return state;
-  };
+  }
 };
 
 export default destinationReducer;
