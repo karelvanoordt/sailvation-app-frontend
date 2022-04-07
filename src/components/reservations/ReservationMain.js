@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchAllReservations from '../../services/services';
+import { fetchAllReservations } from '../../redux/Reservations/reservations';
 import { Link } from 'react-router-dom';
 
 function ReservationMain() {
-  const reservations = useSelector((state) => state.reservationReducer);
   const dispatch = useDispatch();
-
+  const reservations = useSelector((state) => state.reservationReducer);
+  const userId = 1;
   useEffect(() => {
-    dispatch(fetchAllReservations(1));
-  }, [dispatch]);
+    dispatch(fetchAllReservations(userId));
+  }, []);
 
   return (
     <div>

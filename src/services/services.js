@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACK_END_URL = 'http://127.0.0.1:3001/api/v1';
+const BACK_END_URL = 'http://127.0.0.1:3000/api/v1';
 // const BACK_END_URL = 'https://boiling-harbor-88832.herokuapp.com/api/v1';
 // const BACK_END_URL = 'https://pacific-lake-89990.herokuapp.com/api/v1';
 
@@ -39,7 +39,7 @@ export const deleteCruise = async (userId, cruiseId) => {
 // GET ALL RESERVATION
 export const fetchAllReservations = async (userId) => {
   const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`).then((res) => res.data);
-  console.log(reservationData);
+  console.log('Reservation Data', reservationData);
   return reservationData;
 };
 
