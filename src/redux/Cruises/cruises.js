@@ -1,15 +1,15 @@
 import * as apiCalls from '../../services/services';
 
-const FETCH_ALL_CRUISES = 'FETCH_ALL_CRUISES';
-const POST_NEW_CRUISE = 'POST_NEW_CRUISE';
-const DELETE_CRUISE = 'DELETE_CRUISE';
+const GET_ALL_CRUISES = 'cruisesStore/cruises/GET_ALL_CRUISES';
+const POST_NEW_CRUISE = 'cruisesStore/cruises/POST_NEW_CRUISE';
+const DELETE_CRUISE = 'cruisesStore/cruises/DELETE_CRUISE';
 
 const initalCruiseReducer = [];
 
-export const fetchAllCruises = (userId) => async (dispatch) => {
+export const getAllCruises = (userId) => async (dispatch) => {
   const payload = await apiCalls.fetchAllCruises(userId);
   dispatch({
-    type: FETCH_ALL_CRUISES,
+    type: GET_ALL_CRUISES,
     payload,
   });
 };
@@ -32,7 +32,8 @@ export const deleteCruise = (userId, cruiseId) => async (dispatch) => {
 
 const cruisesReducer = (state = initalCruiseReducer, action) => {
   switch (action.type) {
-    case FETCH_ALL_CRUISES:
+    case GET_ALL_CRUISES:
+      console.log('Payload', action.payload);
       return action.payload;
     case POST_NEW_CRUISE:
       return [...state, ...action.payload];
