@@ -13,6 +13,7 @@ function ReservationMain() {
 
   return (
     <div>
+      <h1>r1</h1>
       <ul className="cruise-list">
     {reservations.map((reservation) => (
       <li key={reservation.id} className="reservation-list-item">
