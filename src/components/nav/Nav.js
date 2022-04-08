@@ -6,7 +6,7 @@ function Nav() {
     <div>
       <Link to="/cruises">Cruises</Link>
       <Link to="/cruises/:id">Reservations</Link>
-      <Link to="/cruises/:id/reservation/:id/destionation">Destinations</Link>
+      <Link to="/cruises/:id/reservation/:id/destination">Destinations</Link>
     </div>
   );
 }

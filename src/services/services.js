@@ -25,8 +25,8 @@ export const fetchAllCruises = async (userId) => {
 };
 
 // POST NEW CRUISE
-export const postNewCruise = async (newCruiseData) => {
-  const newCruise = await axios.post(`${BACK_END_URL}/users/${newCruiseData.user_id}/cruises`);
+export const postNewCruise = async (newCruiseData, userId) => {
+  const newCruise = await axios.post(`${BACK_END_URL}/users/${userId}/cruises`, newCruiseData);
   return newCruise;
 };
 
