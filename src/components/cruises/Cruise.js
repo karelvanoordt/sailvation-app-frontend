@@ -14,7 +14,9 @@ function Cruise() {
   return (
     <div>
       <div>
-        button
+        <button className="new-cruise-button" type="button">
+          Add New Cruise
+        </button>
       </div>
       <div>
         <h1>Cruise</h1>
