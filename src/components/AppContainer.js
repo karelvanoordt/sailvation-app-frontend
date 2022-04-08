@@ -14,7 +14,7 @@ function AppContainer() {
             <Cruise />
           </Route>
           <Route path="/cruises/:id">
-            <ReservationMain path="/cruises/:id/reservation" />
+            <ReservationMain path="/destinations" />
           </Route>
           <Route>
             <ReservationDetails path="/cruises/:id/reservation/:id/destination" />

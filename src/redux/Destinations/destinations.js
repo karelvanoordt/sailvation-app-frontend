@@ -1,16 +1,9 @@
 import * as apiCalls from '../../services/services';
+import axios from 'axios';
 
 const FETCH_ALL_DESTINATIONS = 'FETCH_ALL_DESTINATIONS';
 
 const initialDestinationState = [];
-
-export const fetchAllDestinations = (userId) => async (dispatch) => {
-  const payload = await apiCalls.fetchAllDestinations(userId);
-  dispatch({
-    type: FETCH_ALL_DESTINATIONS,
-    payload,
-  });
-};
 
 const destinationReducer = (state = initialDestinationState, action) => {
   switch (action.type) {
@@ -19,6 +12,13 @@ const destinationReducer = (state = initialDestinationState, action) => {
     default:
       return state;
   }
+};
+
+export const fetchAllDestinations = () => (dispatch) => {
+  axios.get('http://127.0.0.1:3000/api/v1/destinations')
+    .then((response) => {
+      dispatch({ type: FETCH_ALL_DESTINATIONS, payload: response });
+    });
 };
 
 export default destinationReducer;
