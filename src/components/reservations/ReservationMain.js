@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllDestinations } from '../../redux/Destinations/destinations';
 import { Link } from 'react-router-dom';
+import '../../App.css'
 
 function ReservationMain() {
 
@@ -21,16 +22,14 @@ function ReservationMain() {
       { destinations.data && destinations.data.map((destination) => (
       <li key={destination.id} className="reservation-list-item">
       <div>
-        <h2>{destination.city}</h2>
-        <p>{destination.country}</p>
-        <p>{destination.departure_city}</p>
-        <p>{destination.days}</p>
-        <p>{destination.price}</p>
-        <img src={destination.image} alt={'an image of ' + destination.city} />
+        <h2>{destination.country}, {destination.city} from {destination.departure_city}</h2>
+        <p>{destination.days} days</p>
+        <p>$ {destination.price}</p>
+        <img src={destination.image} alt={'an image of ' + destination.city} className='d-img' />
+      <Link to={`/cruises/:id/reservation/:id/destination`}>
+        Reserve trip
+      </Link>
       </div>
-      {/* <Link to={`/cruises/${reservation.cruise_id}/reservation/${reservation.id}/destination`}>
-        Reservation
-      </Link> */}
     </li>
     ))}
       </ul>
