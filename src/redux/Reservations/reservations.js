@@ -1,48 +1,20 @@
-import * as apiCalls from '../../services/services';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteReservation } from '../redux/reservations/reservations';
+import differenceBetweenDate, { totalCRate } from '../logic/date_logic';
 
-const FETCH_ALL_RESERVATIONS = 'FETCH_ALL_RESERVATIONS';
-const POST_NEW_RESERVATION = 'POST_NEW_RESERVATION';
-const DELETE_RESERVATION = 'DELETE_RESERVATION';
+function Reservation(props) {
+  const dispatch = useDispatch();
+  const { reservation } = props;
+  const cruise = useSelector((state) => state.cruiseReducer);
 
-const initialReservationState = [];
-
-export const fetchAllReservations = (userId) => async (dispatch) => {
-  const payload = await apiCalls.fetchAllReservations(userId);
-  dispatch({
-    type: FETCH_ALL_RESERVATIONS,
-    payload,
-  });
-};
-
-export const postNewReservations = (newReservationData) => async (dispatch) => {
-  const payload = await apiCalls.postNewCruise(newReservationData);
-  dispatch({
-    type: POST_NEW_RESERVATION,
-    payload,
-  });
-};
-
-export const deleteReservation = (userId, reservationId) => async (dispatch) => {
-  await apiCalls.deleteReservation(userId, reservationId);
-  dispatch({
-    type: DELETE_RESERVATION,
-    reservationId,
-  });
-};
-
-const reservationReducer = (state = initialReservationState, action) => {
-  switch (action.type) {
-    case FETCH_ALL_RESERVATIONS:
-      return action.payload;
-    case POST_NEW_RESERVATION:
-      return [...state, ...action.payload];
-    case DELETE_RESERVATION:
-      return state.filter(
-        (reservationElement) => reservationElement.reservationId !== action.reservationId,
-      );
-    default:
-      return state;
-  }
-};
-
-export default reservationReducer;
+  const getCruiseRate = (id) => {
+    let totalRate = 0;
+    cruises.forEach((cruse) => {
+      if (cruise.id === id) {
+        totalRate += cruise.rate;
+      }
+    });
+    return totalRate;
+  };
