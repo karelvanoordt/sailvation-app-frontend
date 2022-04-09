@@ -10,11 +10,17 @@ function Cruise() {
   const [modalState, setModalState] = useState(false);
   const [newCruiseState, setNewCruiseState] = useState({});
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNewCruiseState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    let { name, value } = e.target;
+    if (name === 'daily_price') {
+      value = parseInt(value, 10);
+      name = 'daily_price';
+    }
+    console.log(name, typeof value);
+    setNewCruiseState((prevState) => (
+      {
+        ...prevState,
+        [name]: value,
+      }));
   };
   const userId = 1;
   console.log(cruises);
@@ -35,7 +41,6 @@ function Cruise() {
                 type="text"
                 name="name"
                 id="cruise-name"
-                // value={newCruiseState.name}
                 onChange={handleChange}
               />
             </label>
@@ -47,7 +52,6 @@ function Cruise() {
                 type="text-area"
                 name="description"
                 id="cruise-description"
-                // value={newCruiseState.description}
                 onChange={handleChange}
               />
             </label>
@@ -59,7 +63,6 @@ function Cruise() {
                 type="text"
                 name="image"
                 id="cruise-image"
-                // value={newCruiseState.image}
                 onChange={handleChange}
               />
             </label>
@@ -71,7 +74,6 @@ function Cruise() {
                 type="number"
                 name="daily_price"
                 id="cruise-price"
-                // value={newCruiseState.dailyPrice}
                 onChange={handleChange}
               />
             </label>
