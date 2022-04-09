@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CruiseItem from './CruiseItem';
-import { getAllCruises, postNewCruise } from '../../redux/Cruises/cruises';
+import { getAllCruises, postNewCruise, deleteCruise } from '../../redux/Cruises/cruises';
 import '../../App.css';
 
 function Cruise() {
@@ -9,22 +9,25 @@ function Cruise() {
   const cruises = useSelector((state) => state.cruisesReducer);
   const [modalState, setModalState] = useState(false);
   const [newCruiseState, setNewCruiseState] = useState({});
+  const userId = 1;
   const handleChange = (e) => {
     let { name, value } = e.target;
     if (name === 'daily_price') {
       value = parseInt(value, 10);
       name = 'daily_price';
     }
-    console.log(name, typeof value);
     setNewCruiseState((prevState) => (
       {
         ...prevState,
         [name]: value,
       }));
   };
-  const userId = 1;
-  console.log(cruises);
-  useEffect(() => { dispatch(getAllCruises(userId)); }, [dispatch]);
+  useEffect(() => {
+    dispatch(getAllCruises(userId));
+  }, []);
+  const handleDelete = (userId, cruiseId) => {
+    dispatch(deleteCruise(userId, cruiseId));
+  };
   return (
     <div>
       <div>
@@ -33,7 +36,7 @@ function Cruise() {
         </button>
       </div>
       <div className={modalState ? 'shown new-cruise-container' : 'hidden new-cruise-container'}>
-        <form>
+        <form id="cruises-form">
           <div className="from-element">
             <label htmlFor="name">
               Cruise Name:
@@ -82,9 +85,11 @@ function Cruise() {
             <button
               type="submit"
               onClick={(e) => {
+                // const form = document.getElementById('cruises-form');
                 e.preventDefault();
                 console.log(newCruiseState);
                 dispatch(postNewCruise(newCruiseState, userId));
+                // form.reset();
               }}
             >
               Save
@@ -99,6 +104,7 @@ function Cruise() {
             <CruiseItem
               key={cruise.id}
               cruise={cruise}
+              handleDelete={handleDelete}
             />
           ))}
         </ul>
