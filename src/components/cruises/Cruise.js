@@ -87,7 +87,6 @@ function Cruise() {
               onClick={(e) => {
                 // const form = document.getElementById('cruises-form');
                 e.preventDefault();
-                console.log(newCruiseState);
                 dispatch(postNewCruise(newCruiseState, userId));
                 // form.reset();
               }}
