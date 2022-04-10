@@ -52,7 +52,7 @@ export const deleteReservation = async (userId, reservationId) => {
   return deletedReservation;
 };
 
-// GET ALL DESTINATIONS
+ALL DESTINATIONS
 export const fetchAllDestinations = async () => {
   const destinationData = await axios.get(`${BACK_END_URL}/destinations`);
   return destinationData;

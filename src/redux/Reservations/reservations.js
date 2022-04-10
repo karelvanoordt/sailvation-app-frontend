@@ -1,20 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteReservation } from '../redux/reservations/reservations';
-import differenceBetweenDate, { totalCRate } from '../logic/date_logic';
+const POST_NEW_RESERVATION = 'reservation/ postNewReservation';
+const FETCH_ALL_RESERVATION = 'reservation/ fetchAllReservations';
+const DELETE_RESERVATION = 'reservation/deleteReservation';
 
-function Reservation(props) {
-  const dispatch = useDispatch();
-  const { reservation } = props;
-  const cruise = useSelector((state) => state.cruiseReducer);
+const END_POINT = 'http://localhost:3000';
+const API_ROUTE = '/api/v1/';
 
-  const getCruiseRate = (id) => {
-    let totalRate = 0;
-    cruises.forEach((cruse) => {
-      if (cruise.id === id) {
-        totalRate += cruise.rate;
-      }
-    });
-    return totalRate;
-  };
