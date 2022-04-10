@@ -19,3 +19,19 @@ export const deleteAReservationAction = (payload) => ({
   type: DELETE_RESERVATION,
   payload,
 });
+
+export const postNewReservation = (payload) => async (dispatch) => {
+  const token = localStorage.getItem('token');
+  const response = await fetch(`${END_POINT}${API_ROUTE}reservations`, {
+    method: 'POST',
+    headers: {
+      Authorization: `${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+  const data = await response.json();
+  dispatch(createReservationAction(data));
+};
+
+const initialState = [];
