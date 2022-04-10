@@ -1,19 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteReservation } from '../redux/reservations/reservations';
+import differenceBetweenDate, { totalCRate } from '../logic/date_logic';
 
-function ReservationMain() {
-  return (
-    <div>
-      <h1>ReservationMain</h1>
-      <ul>
-        <li>
-          <Link to="/cruises/:id/reservation/:id/destination">
-            Destinations(ReservationDetails)
-          </Link>
-        </li>
-      </ul>
-    </div>
-  );
-}
+function Reservation(props) {
+  const dispatch = useDispatch();
+  const { reservation } = props;
+  const cruise = useSelector((state) => state.cruiseReducer);
 
-export default ReservationMain;
+  const getCruiseRate = (id) => {
+    let totalRate = 0;
+    cruises.forEach((cruse) => {
+      if (cruise.id === id) {
+        totalRate += cruise.rate;
+      }
+    });
+    return totalRate;
+  };
