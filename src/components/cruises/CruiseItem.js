@@ -6,8 +6,23 @@ function CruiseItem({ cruise, handleDelete }) {
   useEffect(() => {}, [cruise]);
   return (
     <li key={cruise.id} className="cruise-list-item">
-      <div>
+      <div className="cruises-list-view">
+        <img src={cruise.image} alt={cruise.name} className="cruise-image" />
+        <h2>{cruise.name}</h2>
+        <p>{cruise.description}</p>
+        <p>
+          Daily Price:
+          {cruise.daily_price}
+        </p>
+      </div>
+      <div className="cruises-list-reserve-button-container">
+        <Link to={`/cruises/${cruise.id}`} className="gold-button">
+          Reserve Now!
+        </Link>
+      </div>
+      <div className="cruise-list-button-container">
         <button
+          className="gold-button"
           onClick={(e) => {
             e.preventDefault();
             handleDelete(cruise.user_id, cruise.id);
@@ -16,17 +31,6 @@ function CruiseItem({ cruise, handleDelete }) {
         >
           Delete
         </button>
-      </div>
-      <div>
-        <h2>{cruise.name}</h2>
-        <img src={cruise.image} alt={cruise.name} />
-        <p>{cruise.daily_price}</p>
-        <p>{cruise.description}</p>
-      </div>
-      <div>
-        <Link to={`/cruises/${cruise.id}`}>
-          Reserve Now!
-        </Link>
       </div>
     </li>
   );

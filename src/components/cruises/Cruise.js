@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CruiseItem from './CruiseItem';
 import { getAllCruises, postNewCruise, deleteCruise } from '../../redux/Cruises/cruises';
-import '../../App.css';
+import '../../styles/Cruises.css';
 
 function Cruise() {
   const dispatch = useDispatch();
@@ -29,9 +29,9 @@ function Cruise() {
     dispatch(deleteCruise(userId, cruiseId));
   };
   return (
-    <div>
-      <div>
-        <button className="new-cruise-button" id={{ modalState } && 'new-cruise'} type="button" onClick={() => { setModalState(!modalState); }}>
+    <div className="cruises-container d-flex-col d-flex-center t-center">
+      <div className="add-new-container">
+        <button className="new-cruise-button gold-button" id={{ modalState } && 'new-cruise'} type="button" onClick={() => { setModalState(!modalState); }}>
           {modalState ? 'Cancel' : 'Add New Cruise' }
         </button>
       </div>
@@ -84,11 +84,10 @@ function Cruise() {
           <div className="form-element">
             <button
               type="submit"
+              className="gold-button"
               onClick={(e) => {
-                // const form = document.getElementById('cruises-form');
                 e.preventDefault();
                 dispatch(postNewCruise(newCruiseState, userId));
-                // form.reset();
               }}
             >
               Save
@@ -96,9 +95,9 @@ function Cruise() {
           </div>
         </form>
       </div>
-      <div>
-        <h1>Cruise</h1>
-        <ul className="cruise-list">
+      <div className="cruise-list-container">
+        <h1 className="gold-text">Cruises</h1>
+        <ul className="cruise-list d-flex">
           {cruises.map((cruise) => (
             <CruiseItem
               key={cruise.id}
