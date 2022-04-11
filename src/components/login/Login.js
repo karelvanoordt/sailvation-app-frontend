@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import Cruise from '../cruises/Cruise';
 
@@ -38,7 +39,10 @@ export default function LoginPage() {
       {(user.email !== '') ? (
         <Cruise />
       ) : (
-        <LoginForm Login={Login} />
+        <div>
+          <LoginForm Login={Login} />
+          <Link to="/signup">Sign Up</Link>
+        </div>
       )}
     </div>
   );

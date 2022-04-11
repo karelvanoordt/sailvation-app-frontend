@@ -4,6 +4,7 @@ import Cruise from './cruises/Cruise';
 import ReservationDetails from './reservations/ReservationDetails';
 import ReservationMain from './reservations/ReservationMain';
 import LoginPage from './login/Login';
+import SignupForm from './login/FormSignup';
 
 function AppContainer() {
   return (
@@ -22,6 +23,9 @@ function AppContainer() {
           </Route>
           <Route>
             <ReservationDetails path="/cruises/:id/reservation/:id/destination" />
+          </Route>
+          <Route path="/signup">
+            <SignupForm />
           </Route>
         </Switch>
       </div>

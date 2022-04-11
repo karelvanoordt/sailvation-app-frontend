@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { postNewUser } from '../../services/services';
 
 function SignupForm({ Signup }) {
   const [details, setDetails] = useState({ name: '', email: '' });
@@ -6,6 +8,7 @@ function SignupForm({ Signup }) {
   const submitHandler = (e) => {
     e.preventDefault();
     Signup(details);
+    postNewUser(details);
   };
 
   return (
@@ -14,13 +17,17 @@ function SignupForm({ Signup }) {
         <h2>Signup</h2>
         {/* ERROR! */}
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input type="text" name="name" id="name" onChange={(e) => setDetails({ ...details, name: e.target.value })} value={details.name} />
+          <label htmlFor="name">
+            Name:
+            <input type="text" name="name" id="name" onChange={(e) => setDetails({ ...details, name: e.target.value })} value={details.name} />
+          </label>
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input type="email" name="email" id="email" onChange={(e) => setDetails({ ...details, email: e.target.value })} value={details.email} />
+          <label htmlFor="email">
+            Email:
+            <input type="email" name="email" id="email" onChange={(e) => setDetails({ ...details, email: e.target.value })} value={details.email} />
+          </label>
         </div>
 
         <input type="submit" value="Signup" />
@@ -28,5 +35,12 @@ function SignupForm({ Signup }) {
     </form>
   );
 }
+
+SignupForm.propTypes = {
+  Signup: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default SignupForm;
