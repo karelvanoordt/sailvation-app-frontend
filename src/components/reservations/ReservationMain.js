@@ -11,7 +11,7 @@ function Reservation(props) {
 
   const getCruiseRate = (id) => {
     let totalRate = 0;
-    cruises.forEach((cruse) => {
+    cruises.forEach((cruise) => {
       if (cruise.id === id) {
         totalRate += cruise.rate;
       }
