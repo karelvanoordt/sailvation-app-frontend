@@ -3,7 +3,7 @@ import Nav from './nav/Nav';
 import Cruise from './cruises/Cruise';
 import ReservationDetails from './reservations/ReservationDetails';
 import ReservationMain from './reservations/ReservationMain';
-import LoginPage from './login/login';
+import LoginPage from './login/Login';
 
 function AppContainer() {
   return (
