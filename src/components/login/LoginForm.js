@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 function LoginForm({ Login }) {
   const [details, setDetails] = useState({ name: '', email: '' });
 
