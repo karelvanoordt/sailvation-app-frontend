@@ -19,7 +19,7 @@
 
 .con {
   // width: 80%;
-  margin-left: 200px;
+  // margin-left: 200px;
 }
 
 .swiper-button-next,
@@ -100,4 +100,25 @@
   left: 0 !important;
   right: 10% !important;
   width: 86% !important;
+}
+
+.title-con {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.d-btn-con {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px !important;
+}
+
+.d-btn {
+  text-decoration: none;
+  color: white !important;
+  background-color: #43c482;
+  padding: 10px;
+  border-radius: 5px;
 }

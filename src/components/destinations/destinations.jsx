@@ -25,7 +25,9 @@ function Destinations() {
 
   return (
     <div className="con">
-      <h1>Available destinations</h1>
+      <div className="title-con">
+        <h1>Available destinations</h1>
+      </div>
       <Swiper
       spaceBetween={30}
       centeredSlides={true}
@@ -90,6 +92,11 @@ function Destinations() {
     </SwiperSlide>
     ))}
       </Swiper>
+      <div className="d-btn-con">
+        <Link to={`/cruises/:id/reservation/:id/destination`} className='d-btn'>
+            Add a destination
+        </Link>
+      </div>
     </div>
   );
 }
