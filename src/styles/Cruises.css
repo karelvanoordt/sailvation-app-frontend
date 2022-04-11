@@ -18,7 +18,7 @@
 
 .d-flex-center {
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .t-center {
@@ -27,6 +27,7 @@
 
 .hidden {
   display: none;
+  z-index: -99;
 }
 
 .gold-button {
@@ -95,10 +96,6 @@
   background-color: white;
   margin: 0;
   padding: 0;
-}
-
-.hidden {
-  z-index: -99;
 }
 
 .shown {
