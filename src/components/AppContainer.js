@@ -2,7 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 import Nav from './nav/Nav';
 import Cruise from './cruises/Cruise';
 import ReservationDetails from './reservations/ReservationDetails';
-import ReservationMain from './reservations/ReservationMain';
+import Destinations from './destinations/destinations';
 
 function AppContainer() {
   return (
@@ -14,7 +14,7 @@ function AppContainer() {
             <Cruise />
           </Route>
           <Route path="/cruises/:id">
-            <ReservationMain path="/destinations" />
+            <Destinations path="/destinations" />
           </Route>
           <Route>
             <ReservationDetails path="/cruises/:id/reservation/:id/destination" />
