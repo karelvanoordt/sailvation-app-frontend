@@ -1,13 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import CruiseItem from './CruiseItem';
+import { getAllCruises } from '../../redux/Cruises/cruises';
 
 function Cruise() {
+  const dispatch = useDispatch();
+  const cruises = useSelector((state) => state.cruisesReducer);
+  const reduxState = useSelector((state) => state);
+  console.log('reduxState', reduxState);
+  console.log('Bura', cruises);
+  const userId = 1;
+  useEffect(() => { dispatch(getAllCruises(userId)); }, []);
   return (
     <div>
-      <h1>Cruise</h1>
-      <Link to="/cruises/:id">
-        Reservation
-      </Link>
+      <div>
+        button
+      </div>
+      <div>
+        <h1>Cruise</h1>
+        <ul className="cruise-list">
+          {cruises.map((cruise) => (
+            <CruiseItem
+              key={cruise.id}
+              cruise={cruise}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

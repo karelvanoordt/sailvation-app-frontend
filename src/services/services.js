@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// const BACK_END_URL = 'http://127.0.0.1:3000/api/v1';
+const BACK_END_URL = 'http://127.0.0.1:3000/api/v1';
 // const BACK_END_URL = 'https://boiling-harbor-88832.herokuapp.com/api/v1';
-const BACK_END_URL = 'https://pacific-lake-89990.herokuapp.com/api/v1';
+// const BACK_END_URL = 'https://pacific-lake-89990.herokuapp.com/api/v1';
 
 // GET ALL USERS
 export const fetchAllUsers = async () => {
@@ -18,7 +18,9 @@ export const postNewUser = async (newUserData) => {
 
 // GET ALL CRUISES
 export const fetchAllCruises = async (userId) => {
-  const cruiseData = await axios.get(`${BACK_END_URL}/users/${userId}/cruises`);
+  const cruiseData = await axios.get(`${BACK_END_URL}/users/${userId}/cruises`)
+    .then((res) => res.data);
+  console.log(cruiseData);
   return cruiseData;
 };
 
@@ -36,7 +38,8 @@ export const deleteCruise = async (userId, cruiseId) => {
 
 // GET ALL RESERVATION
 export const fetchAllReservations = async (userId) => {
-  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`);
+  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`).then((res) => res.data);
+  console.log('Reservation Data', reservationData);
   return reservationData;
 };
 

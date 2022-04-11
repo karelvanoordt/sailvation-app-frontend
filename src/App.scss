@@ -1,0 +1,124 @@
+.d-img {
+  height: 150px;
+}
+
+.reservation-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  margin-right: 10px !important;
+  height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+
+.con {
+  // width: 80%;
+  // margin-left: 200px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(252, 0, 0) !important;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  border-radius: 50%;
+  background-color: grey;
+  padding: 5px;
+  min-width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.days p {
+  margin: 0;
+}
+
+.d-text {
+  color: rgb(60, 43, 2);
+  font-weight: bold;
+  font-size: larger;
+}
+
+.r-btn {
+  text-decoration: none;
+  color: white !important;
+  background-color: #ff8c5a;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.info-con {
+  display: flex;
+}
+
+.b-sect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.swiper-pagination {
+  position: static !important;
+  color: rgb(100, 100, 100) !important;
+  font-weight: bolder !important;
+}
+
+.price-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  color: rgb(26, 26, 141);
+}
+
+.price-con p {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.swiper-horizontal>,
+.swiper-scrollbar {
+  left: 0 !important;
+  right: 10% !important;
+  width: 86% !important;
+}
+
+.title-con {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.d-btn-con {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px !important;
+}
+
+.d-btn {
+  text-decoration: none;
+  color: white !important;
+  background-color: #43c482;
+  padding: 10px;
+  border-radius: 5px;
+}
