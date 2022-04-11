@@ -58,15 +58,22 @@
   border-radius: 15px 15px 0 0;
 }
 
+.cruise-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 .cruise-list-item {
   width: 300px;
   border: 1px solid rgb(196, 144, 13);
   border-radius: 15px;
   margin: 5px 20px;
+  list-style: none;
 }
 
 .cruise-list-button-container {
   align-self: flex-end;
+  margin-bottom: 15px;
 }
 
 .cruises-list-view {
@@ -82,3 +89,46 @@
   margin: 25px 0;
 }
 
+.new-cruise-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  z-index: -99;
+}
+
+.shown {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#cruises-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-element,
+.form-element label,
+.form-element label input {
+  width: 100%;
+  margin: 0;
+}
+
+.form-element label input {
+  padding: 30px;
+  font-size: 20px;
+}
+
+.form-element .gold-button {
+  margin-right: 200px;
+  margin-left: 200px;
+}

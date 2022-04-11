@@ -12,7 +12,10 @@ function CruiseItem({ cruise, handleDelete }) {
         <p>{cruise.description}</p>
         <p>
           Daily Price:
+          {' '}
           {cruise.daily_price}
+          {' '}
+          $
         </p>
       </div>
       <div className="cruises-list-reserve-button-container">

@@ -36,8 +36,8 @@ function Cruise() {
         </button>
       </div>
       <div className={modalState ? 'shown new-cruise-container' : 'hidden new-cruise-container'}>
-        <form id="cruises-form">
-          <div className="from-element">
+        <form id="cruises-form" className="d-flex-col d-flex-center t-center">
+          <div className="form-element">
             <label htmlFor="name">
               Cruise Name:
               <input
@@ -72,7 +72,7 @@ function Cruise() {
           </div>
           <div className="form-element">
             <label htmlFor="daily_price">
-              Daily Price:
+              Daily Price: 
               <input
                 type="number"
                 name="daily_price"
@@ -88,9 +88,19 @@ function Cruise() {
               onClick={(e) => {
                 e.preventDefault();
                 dispatch(postNewCruise(newCruiseState, userId));
+                setModalState(!modalState);
               }}
             >
               Save
+            </button>
+            <button 
+            type="button"
+            className="gold-button"
+            onClick={() => {
+              setModalState(!modalState)
+            }}
+            >
+            Cancel
             </button>
           </div>
         </form>
