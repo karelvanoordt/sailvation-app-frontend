@@ -37,7 +37,8 @@ export const deleteCruise = async (userId, cruiseId) => {
 
 // GET ALL RESERVATION
 export const fetchAllReservations = async (userId) => {
-  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`);
+  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`).then((res) => res.data);
+  console.log('Reservation Data', reservationData);
   return reservationData;
 };
 
