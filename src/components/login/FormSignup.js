@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { postNewUser } from '../../services/services';
+import { fetchAllUsers, postNewUser } from '../../services/services';
 
 function SignupForm({ Signup }) {
   const [details, setDetails] = useState({ name: '', email: '' });
