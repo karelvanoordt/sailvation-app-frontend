@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LoginForm from './LoginForm';
 import Cruise from '../cruises/Cruise';
 
 export default function LoginPage() {
@@ -9,7 +9,9 @@ export default function LoginPage() {
     name: 'Karel',
   };
 
-  const [user, setUser] = useState({ name: '', email: '' });
+  const dispatch = useDispatch();
+  const [userEmail, setEmail] = useState('');
+
 
   const Login = (details) => {
     console.log(details);
@@ -24,13 +26,6 @@ export default function LoginPage() {
     }
   };
 
-  //   const Logout = () => {
-  //     console.log('Logout');
-  //     setUser({
-  //       name: '',
-  //       email: '',
-  //     });
-  //   };
 
   return (
 
@@ -40,7 +35,29 @@ export default function LoginPage() {
         <Cruise />
       ) : (
         <div>
-          <LoginForm Login={Login} />
+          <div className="form-container">
+            <form onSubmit={submitHandler}>
+              <div className="form-inner">
+                <h2>Login</h2>
+                {/* ERROR! */}
+                <div className="form-group">
+                  <label htmlFor="name">
+                    Name:
+                    <input type="text" name="name" id="name" onChange={(e) => setDetails({ ...details, name: e.target.value })} value={details.name} />
+                  </label>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">
+                    Email:
+                    <input type="email" name="email" id="email" onChange={(e) => setDetails({ ...details, email: e.target.value })} value={details.email} />
+                  </label>
+                </div>
+
+                <input type="submit" value="Login" />
+              </div>
+            </form>
+          </div>
           <Link to="/signup">Sign Up</Link>
         </div>
       )}
