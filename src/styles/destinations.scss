@@ -35,8 +35,8 @@
   font-weight: bolder;
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   font-size: 18px;
 }
 
@@ -158,7 +158,7 @@
 
 .pub p {
   font-family: 'Helvitica', Helvetica, sans-serif;
-  font-weight: smaller;
+  font-weight: 100;
 }
 
 .icons {

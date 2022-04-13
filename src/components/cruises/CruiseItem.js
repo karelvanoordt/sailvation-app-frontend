@@ -25,7 +25,7 @@ function CruiseItem({ cruise, handleDelete }) {
       </div>
       <div className="cruise-list-button-container">
         <button
-          className="gold-button"
+          className="gold-button delete-btn"
           onClick={(e) => {
             e.preventDefault();
             handleDelete(cruise.user_id, cruise.id);

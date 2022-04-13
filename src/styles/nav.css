@@ -26,6 +26,15 @@
   background-color: #97bf02;
 }
 
+.links-con li,
+a {
+  text-decoration: none;
+  list-style: none;
+  color: rgb(13, 13, 24);
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 .nav-cruise a {
   color: white;
 }
@@ -41,15 +50,6 @@
 .links-con li {
   width: 80%;
   padding: 10px;
-}
-
-.links-con li,
-a {
-  text-decoration: none;
-  list-style: none;
-  color: rgb(13, 13, 24);
-  font-size: 20px;
-  font-weight: bolder;
 }
 
 @media screen and (max-width: 768px) {
