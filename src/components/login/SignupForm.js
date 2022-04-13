@@ -9,7 +9,9 @@ import { postNewUser } from '../../redux/Users/users';
 function SignupForm() {
 
   const dispatch = useDispatch();
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState(
+    {name: '', email: ''}
+  );
 
   const submitHandler = (e) => {
     e.preventDefault();

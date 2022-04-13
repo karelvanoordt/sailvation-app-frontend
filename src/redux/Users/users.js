@@ -26,7 +26,7 @@ const userReducer = (state = initialUserState, action) => {
     case FETCH_ALL_USERS:
       return action.payload;
     case POST_NEW_USER:
-      return [...state, ...action.payload];
+      return [...state, action.payload];
     default:
       return state;
   }
