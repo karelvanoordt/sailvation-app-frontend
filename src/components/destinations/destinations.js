@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import '../../App.scss';
+import '../../styles/destinations.scss';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -30,7 +30,7 @@ function Destinations() {
       </div>
       <Swiper
       spaceBetween={30}
-      centeredSlides={true}
+      // centeredSlides={true}
       navigation={true}
       pagination={{
         type: "fraction",
@@ -39,40 +39,40 @@ function Destinations() {
       onSlideChange={() => console.log('slide change')}
       grabCursor={true}
       breakpoints={{
-        // when window width is >= 640px
+        // when window width is >= 100px
         100: {
-          width: 350,
+          width: 250,
           slidesPerView: 1,
           spaceBetween: 10,
         },
-        // when window width is >= 768px
+        // when window width is >= 600px
         600: {
-          width: 500,
-          slidesPerView: 2,
+          width: 300,
+          slidesPerView: 1,
           spaceBetween: 20,
         },
         700: {
-          width: 600,
-          slidesPerView: 2,
+          width: 500,
+          slidesPerView: 1,
           spaceBetween: 25,
         },
         // when window width is >= 900px
         900: {
-          width: 950,
+          width: 750,
           spaceBetween: 0,
-          slidesPerView: 3,
+          slidesPerView: 2,
         },
         1000: {
-          width: 1050,
+          width: 850,
           slidesPerView: 3,
         },
 
         1200: {
-          width: 1150,
+          width: 950,
           slidesPerView: 4,
         },
         1300: {
-          width: 1550,
+          width: 1150,
           slidesPerView: 4,
         },
       }}
@@ -84,19 +84,14 @@ function Destinations() {
           <p className="d-text">{destination.country}, {destination.city} from {destination.departure_city}</p>
         </section>
         <section className="b-sect">
-          <div className="price-con">$ <p>{destination.price}</p></div>
+          <div className="price-con">$ <p>{destination.price}</p><div className="avg"><i>AVG</i><i>PP</i></div></div>
           <Link to={`/cruises/:id/reservation/:id/destination`} className='r-btn'>
-            Reserve cruise
+           Book
           </Link>
         </section>
     </SwiperSlide>
     ))}
       </Swiper>
-      <div className="d-btn-con">
-        <Link to={`/cruises/:id/reservation/:id/destination`} className='d-btn'>
-            Add a destination
-        </Link>
-      </div>
     </div>
   );
 }

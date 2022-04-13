@@ -31,7 +31,7 @@ function Cruise() {
   return (
     <div className="cruises-container d-flex-col d-flex-center t-center">
       <div className="add-new-container">
-        <button className="new-cruise-button gold-button" id={{ modalState } && 'new-cruise'} type="button" onClick={() => { setModalState(!modalState); }}>
+        <button className="new-cruise-button gold-button-1" id={{ modalState } && 'new-cruise'} type="button" onClick={() => { setModalState(!modalState); }}>
           {modalState ? 'Cancel' : 'Add New Cruise' }
         </button>
       </div>

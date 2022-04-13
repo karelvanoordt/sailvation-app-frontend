@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { postNewUser } from '../../redux/Users/users';
+import '../../styles/sign.css'
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function SignupForm() {
   };
 
   return (
-    <div>
+    <div className='container'>
       {isLoggedIn
         && (
         <div>
