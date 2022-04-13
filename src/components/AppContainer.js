@@ -22,14 +22,14 @@ function AppContainer() {
           <Route exact path="/">
             <Cruise />
           </Route>
-          <Route path="/cruises/:id">
+          {/* <Route path="/cruises/:id">
             <Destinations path="/destinations" />
+          </Route> */}
+          <Route path="/cruises/reservation">
+            <ReservationMain path="/cruises/reservation" />
           </Route>
-          <Route path="/:userid/cruises/:cruiseid/reservation">
-            <ReservationMain path="/:userid/cruises/:cruiseid/reservation" />
-          </Route>
-          <Route path="/:userid/reservations">
-            <ReservationDetails path="/:userid/reservations" />
+          <Route path="/reservations">
+            <ReservationDetails path="/reservations" />
           </Route>
         </Switch>
       </div>

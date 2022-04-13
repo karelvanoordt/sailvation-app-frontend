@@ -7,6 +7,10 @@ import {
 import img from '../../styles/Sail.png'
 
 function Nav() {
+
+  const updateStorage = () =>{
+    localStorage.setItem('cruiseId', 0 )
+  }
   return (
     <div className="nav-con">
       <div clasName='logo-con'>
@@ -17,16 +21,20 @@ function Nav() {
           <li className="nav-cruise">
             <Link to="/">Cruises</Link>
           </li>
-          <li>
-            <Link to="/cruises/:id">Reservations</Link>
+          <li className="nav-cruise">
+            <Link to="/reservations">Reservations</Link>
           </li>
-          <li>
+          
+          <li className="nav-cruise">
+            <Link to="/cruises/reservation" onClick={updateStorage}>Make a reservation</Link>
+          </li>
+          {/* <li>
             <Link to="/cruises/:id/reservation/:id/destination">Destinations</Link>
-          </li>
-          <li>
+          </li> */}
+          <li className="nav-cruise">
             <Link to="/login">Login</Link>
           </li>
-          <li>
+          <li className="nav-cruise">
           <Link to="/signup">Sign Up</Link>
           </li>
         </ul>

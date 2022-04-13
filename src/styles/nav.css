@@ -23,8 +23,13 @@
 
 .nav-cruise {
   padding-left: 50px;
-  background-color: #97bf02;
+  cursor: pointer;
 }
+
+.links-con li:hover {
+background-color: #97bf02!important;
+}
+
 
 .links-con li,
 a {
@@ -34,9 +39,8 @@ a {
   font-size: 20px;
   font-weight: bolder;
 }
-
-.nav-cruise a {
-  color: white;
+.nav-cruise:hover > a{
+  color: #fff;
 }
 
 .links-con ul {

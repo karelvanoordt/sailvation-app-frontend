@@ -13,9 +13,8 @@ const ReservationDetails = () => {
   const [num, setNum] = useState(0)
 
   const dispatch = useDispatch();
-  let {userid} = useParams();
-
-  userid = parseInt(userid, 10);
+  let  userid  = localStorage.getItem('userId');;
+  userid = parseInt(userid, 10)
 
   const handleDelete = (e, id, userid) => {
     e.preventDefault();
@@ -42,12 +41,15 @@ const ReservationDetails = () => {
   const cruises = useSelector((state) => state.cruisesReducer);
   const reservationsall = useSelector((state) => state.reservationReducer)
   const destinations = useSelector((state) => state.destinationReducer.data)
-  
+  const isLoggedIn = localStorage.getItem('isLoggedIn')
 
+  console.log(isLoggedIn)
   return (
     <>
       <h1 className="text-center m-4">Reservations</h1>
-     <div className="reservations-container">
+      {
+        isLoggedIn === 'true' ? (
+<div className="reservations-container">
         {
          reservationsall && reservationsall.map((reservation) => (
            reservation.user_id === parseInt(userid, 10)
@@ -77,7 +79,12 @@ const ReservationDetails = () => {
             )
          ))
         }
-      </div> 
+      </div>
+        ) : (
+          <h1 className='text-center'> You have to Log in</h1>
+        )
+      }
+      
     </>
   );
 };

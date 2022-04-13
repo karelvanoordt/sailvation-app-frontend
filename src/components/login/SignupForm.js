@@ -19,7 +19,7 @@ function SignupForm() {
   };
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
       {isLoggedIn
         && (
         <div>
@@ -31,9 +31,9 @@ function SignupForm() {
         )}
       {!isLoggedIn
       && (
-      <div>
+      <div className='m-4'>
         <h2>Already Have an Account?</h2>
-        <Link to="/login">
+        <Link to="/login"  className='btn btn-success mt-3'>
           You can login from here
         </Link>
       </div>
@@ -45,7 +45,7 @@ function SignupForm() {
           isLoggedIn(true);
         }}
       >
-        <div className="form-inner">
+        <div className="form-inner m-4">
           <h2>Signup</h2>
           {/* ERROR! */}
           <div className="form-group">
@@ -55,14 +55,14 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="form-group">
+          <div className="form-group mt-3" >
             <label htmlFor="email">
               Email:
               <input type="email" name="email" id="email" onChange={(e) => setDetails({ ...details, email: e.target.value })} value={details.email} />
             </label>
           </div>
 
-          <input type="submit" value="Signup" disabled={isLoggedIn} />
+          <input type="submit"  className='btn btn-success mt-3' value="Signup" disabled={isLoggedIn} />
         </div>
       </form>
     </div>
