@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { fetchAllUsers, postNewUser } from '../../services/services';
+/* eslint-disable*/
 
-function SignupForm({ Signup }) {
-  const [details, setDetails] = useState({ name: '', email: '' });
+import React, { useReducer, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { postNewUser } from '../../redux/Users/users';
+ 
+
+function SignupForm() {
+
+  const dispatch = useDispatch();
+  const [details, setDetails] = useState();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    Signup(details);
-    postNewUser(details);
-  };
+    if ( details.name !== '' && details.email !== '' ) {
+      dispatch(postNewUser(details));
+    }
+  }
 
   return (
     <form onSubmit={submitHandler}>
@@ -35,12 +42,5 @@ function SignupForm({ Signup }) {
     </form>
   );
 }
-
-SignupForm.propTypes = {
-  Signup: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 export default SignupForm;

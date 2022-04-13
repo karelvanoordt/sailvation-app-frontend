@@ -3,8 +3,7 @@ import Nav from './nav/Nav';
 import Cruise from './cruises/Cruise';
 import ReservationDetails from './reservations/ReservationDetails';
 import ReservationMain from './reservations/ReservationMain';
-import LoginPage from './login/Login';
-import SignupForm from './login/FormSignup';
+import SignupForm from './login/SignupForm';
 
 function AppContainer() {
   return (
@@ -13,7 +12,7 @@ function AppContainer() {
       <div className="content">
         <Switch>
           <Route exact path="">
-            <LoginPage />
+            <SignupForm />
           </Route>
           <Route exact path="/cruises">
             <Cruise />
