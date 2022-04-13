@@ -14,8 +14,8 @@ export const fetchAllReservations = (userId) => async (dispatch) => {
   });
 };
 
-export const postNewReservations = (newReservationData) => async (dispatch) => {
-  const payload = await apiCalls.postNewCruise(newReservationData);
+export const postNewReservations = (newReservationData, user_id) => async (dispatch) => {
+  const payload= await apiCalls.postNewReservation(newReservationData, user_id);
   dispatch({
     type: POST_NEW_RESERVATION,
     payload,
@@ -35,7 +35,7 @@ const reservationReducer = (state = initialReservationState, action) => {
     case FETCH_ALL_RESERVATIONS:
       return action.payload;
     case POST_NEW_RESERVATION:
-      return [...state, ...action.payload];
+      return [action.payload];
     case DELETE_RESERVATION:
       return state.filter(
         (reservationElement) => reservationElement.reservationId !== action.reservationId,
