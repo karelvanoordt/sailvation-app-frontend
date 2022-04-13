@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchAllUsers } from '../../redux/Users/users';
+import '../../styles/sign.css'
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export default function LoginPage() {
     });
   };
   return (
-        <div>
+        <div className='container'>
           <div className="form-container">
             <div>
               <h2>Don't you have a account</h2>

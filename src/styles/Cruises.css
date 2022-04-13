@@ -41,12 +41,29 @@
   cursor: pointer;
 }
 
+.gold-button-1 {
+  background-color: #97bf02;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .gold-text {
-  color: rgb(196, 144, 13);
+  color: black;
 }
 
 .cruises-container > * {
   margin: 10px 10px;
+}
+
+.cruises-container {
+  padding-top: 40px;
+  width: 80%;
+  margin-left: 20%;
 }
 
 .add-new-container {
@@ -128,4 +145,8 @@
 .form-element .gold-button {
   margin-right: 200px;
   margin-left: 200px;
+}
+
+.delete-btn {
+  background-color: red;
 }

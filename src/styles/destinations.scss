@@ -15,16 +15,45 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .con {
-  // width: 80%;
-  // margin-left: 200px;
+  width: 79%;
+  position: fixed;
+  right: 0;
+  margin-top: 80px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: rgb(252, 0, 0) !important;
+  color: white !important;
+  background-color: green !important;
+  width: 80px;
+  padding: 27px;
+  font-weight: bolder;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px;
+}
+
+.swiper-button-next {
+  display: flex;
+  justify-content: flex-start;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  right: 0;
+}
+
+.swiper-button-prev {
+  display: flex;
+  justify-content: flex-end;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  left: 0;
 }
 
 .days {
@@ -56,9 +85,10 @@
 .r-btn {
   text-decoration: none;
   color: white !important;
-  background-color: #ff8c5a;
+  background-color: rgb(196, 144, 13);
   padding: 10px;
   border-radius: 5px;
+  margin: 0;
 }
 
 .info-con {
@@ -72,13 +102,25 @@
   padding: 20px;
   background-color: white;
   border-radius: 5px;
-  height: 50px;
+  height: 70px;
+}
+
+.avg {
+  display: flex;
+  flex-direction: column;
+}
+
+.avg i {
+  margin-left: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
 }
 
 .swiper-pagination {
   position: static !important;
   color: rgb(100, 100, 100) !important;
   font-weight: bolder !important;
+  margin-bottom: 20px;
 }
 
 .price-con {
@@ -90,6 +132,7 @@
 }
 
 .price-con p {
+  font-family: 'Times New Roman', Times, serif;
   font-size: 28px;
   font-weight: bold;
   margin-left: 5px;
@@ -106,19 +149,29 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 40px;
 }
 
-.d-btn-con {
+.title-con h1 {
+  color: black;
+}
+
+.pub p {
+  font-family: 'Helvitica', Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+.icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 100px !important;
 }
 
-.d-btn {
-  text-decoration: none;
-  color: white !important;
-  background-color: #43c482;
-  padding: 10px;
-  border-radius: 5px;
+@media screen and (max-width: 768px) {
+  .con {
+    width: 100%;
+    margin-top: 0;
+    padding: 20px;
+  }
 }
