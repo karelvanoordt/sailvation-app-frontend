@@ -7,7 +7,7 @@ const BACK_END_URL = 'http://127.0.0.1:3000/api/v1';
 // GET ALL USERS
 export const fetchAllUsers = async () => {
   const usersData = await axios.get(`${BACK_END_URL}/users`);
-  return usersData;
+  return usersData.data;
 };
 
 // POST NEW USER
