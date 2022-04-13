@@ -99,7 +99,7 @@ const ReservationMain = () => {
              placeholder="Choose a House you want to reserve."
              id="dropdown-menu-align-end"
            >
-             <option disabled selected>
+             <option disabled defaultValue>
                Choose a Cruise you want to reserve
              </option>
              { cruises.map((cruise) => (
@@ -115,7 +115,7 @@ const ReservationMain = () => {
             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
             
             <select align="end" title={title} id="dropdown-menu-align-end"  onChange={(e) => setDestinationId(e.target.value)} >
-            <option disabled selected>
+            <option disabled defaultValue>
               {title}
              </option>
              { destinations && destinations.map((destination) => (

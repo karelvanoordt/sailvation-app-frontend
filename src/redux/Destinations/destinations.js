@@ -15,7 +15,7 @@ const destinationReducer = (state = initialDestinationState, action) => {
 };
 
 export const fetchAllDestinations = () => (dispatch) => {
-  axios.get('http://127.0.0.1:3000/api/v1/destinations')
+  axios.get('http://pacific-lake-89990.herokuapp.com/api/v1/destinations')
     .then((response) => {
       dispatch({ type: FETCH_ALL_DESTINATIONS, payload: response });
     });
