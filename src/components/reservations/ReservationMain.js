@@ -54,8 +54,12 @@ const ReservationMain = () => {
         destination_id: parseInt(destinationId, 10),
       },
     };
+    console.log('postData', postData);
+
     dispatch(postNewReservations(postData, userid));
   };
+
+  console.log(startDate, userid)
 
 
   return (

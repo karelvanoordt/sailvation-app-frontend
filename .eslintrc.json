@@ -27,7 +27,6 @@
       "version": "detect"
     }
   },
-
   
     "ignorePatterns": [
     "dist/",
