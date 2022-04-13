@@ -20,25 +20,25 @@ export const postNewUser = async (newUserData) => {
 export const fetchAllCruises = async (userId) => {
   const cruiseData = await axios.get(`${BACK_END_URL}/users/${userId}/cruises`)
     .then((res) => res.data);
-  console.log(cruiseData);
   return cruiseData;
 };
 
 // POST NEW CRUISE
-export const postNewCruise = async (newCruiseData) => {
-  const newCruise = await axios.post(`${BACK_END_URL}/users/${newCruiseData.user_id}/cruises`);
+export const postNewCruise = async (newCruiseData, userId) => {
+  const newCruise = await axios.post(`${BACK_END_URL}/users/${userId}/cruises`, newCruiseData).then((res) => res.data);
   return newCruise;
 };
 
 // DELETE A CRUSE
 export const deleteCruise = async (userId, cruiseId) => {
-  const deletedCruise = await axios.post(`${BACK_END_URL}/users/${userId}/cruises/${cruiseId}`);
+  const deletedCruise = await axios.delete(`${BACK_END_URL}/users/${userId}/cruises/${cruiseId}`);
   return deletedCruise;
 };
 
 // GET ALL RESERVATION
 export const fetchAllReservations = async (userId) => {
-  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`);
+  const reservationData = await axios.get(`${BACK_END_URL}/users/${userId}/reservations`).then((res) => res.data);
+  console.log('Reservation Data', reservationData);
   return reservationData;
 };
 

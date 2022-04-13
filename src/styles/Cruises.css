@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300&family=Permanent+Marker&family=Roboto+Slab:wght@300;400;500;600;900&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lobster', cursive;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+  z-index: -99;
+}
+
+.gold-button {
+  background-color: rgb(196, 144, 13);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gold-text {
+  color: rgb(196, 144, 13);
+}
+
+.cruises-container > * {
+  margin: 10px 10px;
+}
+
+.add-new-container {
+  align-self: flex-end;
+}
+
+.cruise-image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.cruise-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.cruise-list-item {
+  width: 300px;
+  border: 1px solid rgb(196, 144, 13);
+  border-radius: 15px;
+  margin: 5px 20px;
+  list-style: none;
+}
+
+.cruise-list-button-container {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.cruises-list-view {
+  text-align: center;
+}
+
+.cruises-list-view > *:not(:first-child) {
+  margin: 10px 0;
+}
+
+.cruises-list-reserve-button-container {
+  align-self: center;
+  margin: 25px 0;
+}
+
+.new-cruise-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.shown {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#cruises-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-element,
+.form-element label,
+.form-element label input {
+  width: 100%;
+  margin: 0;
+}
+
+.form-element label input {
+  padding: 30px;
+  font-size: 20px;
+}
+
+.form-element .gold-button {
+  margin-right: 200px;
+  margin-left: 200px;
+}

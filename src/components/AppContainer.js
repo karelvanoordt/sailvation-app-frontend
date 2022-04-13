@@ -5,6 +5,7 @@ import ReservationDetails from './reservations/ReservationDetails';
 import ReservationMain from './reservations/ReservationMain';
 import SignupForm from './login/SignupForm';
 import Login from './login/Login';
+import Destinations from './destinations/destinations';
 
 function AppContainer() {
   return (
@@ -22,7 +23,7 @@ function AppContainer() {
             <Cruise />
           </Route>
           <Route path="/cruises/:id">
-            <ReservationMain path="/cruises/:id/reservation" />
+            <Destinations path="/destinations" />
           </Route>
           <Route>
             <ReservationDetails path="/cruises/:id/reservation/:id/destination" />

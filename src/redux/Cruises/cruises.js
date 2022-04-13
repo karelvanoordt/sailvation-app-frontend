@@ -14,8 +14,8 @@ export const getAllCruises = (userId) => async (dispatch) => {
   });
 };
 
-export const postNewCruise = (newCruiseData) => async (dispatch) => {
-  const payload = await apiCalls.postNewCruise(newCruiseData);
+export const postNewCruise = (newCruiseData, userId) => async (dispatch) => {
+  const payload = await apiCalls.postNewCruise(newCruiseData, userId);
   dispatch({
     type: POST_NEW_CRUISE,
     payload,
@@ -33,12 +33,11 @@ export const deleteCruise = (userId, cruiseId) => async (dispatch) => {
 const cruisesReducer = (state = initalCruiseReducer, action) => {
   switch (action.type) {
     case GET_ALL_CRUISES:
-      console.log('Payload', action.payload);
       return action.payload;
     case POST_NEW_CRUISE:
-      return [...state, ...action.payload];
+      return [...state, action.payload];
     case DELETE_CRUISE:
-      return state.filter((cruiseElement) => cruiseElement.cruiseId !== action.cruiseId);
+      return state.filter((cruiseElement) => cruiseElement.id !== action.cruiseId);
     default:
       return state;
   }
