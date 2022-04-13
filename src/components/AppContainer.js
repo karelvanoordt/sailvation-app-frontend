@@ -4,6 +4,7 @@ import Cruise from './cruises/Cruise';
 import ReservationDetails from './reservations/ReservationDetails';
 import ReservationMain from './reservations/ReservationMain';
 import SignupForm from './login/SignupForm';
+import Login from './login/Login';
 
 function AppContainer() {
   return (
@@ -11,10 +12,13 @@ function AppContainer() {
       <Nav />
       <div className="content">
         <Switch>
-          <Route exact path="">
+          <Route exact path="/signup">
             <SignupForm />
           </Route>
-          <Route exact path="/cruises">
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/cruises">
             <Cruise />
           </Route>
           <Route path="/cruises/:id">
@@ -22,9 +26,6 @@ function AppContainer() {
           </Route>
           <Route>
             <ReservationDetails path="/cruises/:id/reservation/:id/destination" />
-          </Route>
-          <Route path="/signup">
-            <SignupForm />
           </Route>
         </Switch>
       </div>
