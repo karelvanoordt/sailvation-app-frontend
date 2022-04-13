@@ -4,12 +4,13 @@ import '../../styles/nav.css';
 import {
   FaTwitter, FaFacebook, FaVimeo, FaInstagram, FaPinterest,
 } from 'react-icons/fa';
+import img from '../../styles/Sail.png'
 
 function Nav() {
   return (
     <div className="nav-con">
       <div clasName='logo-con'>
-        <img src="https://img.freepik.com/free-vector/cruise-ship-logo-template-design-vector-emblem-design-concept-creative-symbol-icon_316488-2313.jpg" alt="Sailvation logo" className="logo"/>
+        <img src={img} alt="Sailvation logo" className="logo"/>
       </div>
       <nav className="links-con">
         <ul>
