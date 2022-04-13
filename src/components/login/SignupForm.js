@@ -8,14 +8,12 @@ function SignupForm() {
   const [details, setDetails] = useState(
     { name: '', email: '' },
   );
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const submitHandler = () => {
     if (details.name !== '' && details.email !== '') {
       dispatch(postNewUser(details));
       setIsLoggedIn(true);
+      console.log(isLoggedIn);
     }
   };
 
@@ -24,14 +22,24 @@ function SignupForm() {
       {isLoggedIn
         && (
         <div>
-          <p>Registarion was successfull</p>
+          <p>Registarion was successful</p>
           <Link to="/login">
             You can login from here
           </Link>
         </div>
         )}
+      {!isLoggedIn
+      && (
+      <div>
+        <h2>Already Have an Account?</h2>
+        <Link to="/login">
+          You can login from here
+        </Link>
+      </div>
+      )}
       <form
-        onSubmit={() => {
+        onSubmit={(e) => {
+          e.preventDefault();
           submitHandler();
           isLoggedIn(true);
         }}
@@ -53,7 +61,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <input type="submit" value="Signup" />
+          <input type="submit" value="Signup" disabled={isLoggedIn} />
         </div>
       </form>
     </div>
