@@ -15,7 +15,7 @@ export default function LoginPage() {
     if(users.langth !== 0) dispatch(fetchAllUsers());
   }, [dispatch]);
   const routeChange = () => {
-    const path = `/cruises`;  
+    const path = `/`;  
     history.push(path);
   };
   const popUpWrongEmail = () => {

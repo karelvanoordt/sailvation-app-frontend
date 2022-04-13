@@ -10,13 +10,6 @@ function CruiseItem({ cruise, handleDelete }) {
         <img src={cruise.image} alt={cruise.name} className="cruise-image" />
         <h2>{cruise.name}</h2>
         <p>{cruise.description}</p>
-        <p>
-          Daily Price:
-          {' '}
-          {cruise.daily_price}
-          {' '}
-          $
-        </p>
       </div>
       <div className="cruises-list-reserve-button-container">
         <Link to={`/cruises/${cruise.id}`} className="gold-button">
@@ -45,7 +38,6 @@ CruiseItem.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    daily_price: PropTypes.string.isRequired,
     user_id: PropTypes.number.isRequired,
   }).isRequired,
   handleDelete: PropTypes.func.isRequired,

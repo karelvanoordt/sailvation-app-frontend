@@ -21,7 +21,7 @@ function Destinations() {
   }, []);
 
   const destinations = useSelector((state) => state.destinationReducer);
-  console.log(destinations.data);
+  console.log('dest Data', destinations.data);
 
   return (
     <div className="con">
