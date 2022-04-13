@@ -13,13 +13,13 @@ function AppContainer() {
       <Nav />
       <div className="content">
         <Switch>
-          <Route exact path="/signup">
+          <Route path="/signup">
             <SignupForm />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/cruises">
+          <Route exact path="/">
             <Cruise />
           </Route>
           <Route path="/cruises/:id">
