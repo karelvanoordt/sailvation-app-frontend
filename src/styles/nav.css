@@ -35,6 +35,11 @@ a {
   font-weight: bolder;
 }
 
+.links-con li {
+  width: 80%;
+  padding: 10px;
+}
+
 .links-con li:hover,
 a:hover {
   background-color: #97bf02 !important;
@@ -51,11 +56,6 @@ a:hover {
   align-items: flex-end;
   width: 100%;
   padding: 0;
-}
-
-.links-con li {
-  width: 80%;
-  padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
