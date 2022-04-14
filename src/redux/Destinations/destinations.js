@@ -1,4 +1,3 @@
-import * as apiCalls from '../../services/services';
 import axios from 'axios';
 
 const FETCH_ALL_DESTINATIONS = 'FETCH_ALL_DESTINATIONS';

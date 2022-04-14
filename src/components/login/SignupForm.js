@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { postNewUser } from '../../redux/Users/users';
-import '../../styles/sign.css'
+import '../../styles/sign.css';
 
 function SignupForm() {
   const history = useHistory();
@@ -12,7 +12,7 @@ function SignupForm() {
     { name: '', email: '' },
   );
   const routeChange = () => {
-    const path = `/login`;  
+    const path = '/login';
     history.push(path);
   };
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,13 +20,13 @@ function SignupForm() {
     if (details.name !== '' && details.email !== '') {
       dispatch(postNewUser(details));
       setIsLoggedIn(true);
-      setTimeout(1000)
+      setTimeout(1000);
       setTimeout(routeChange, 2000);
     }
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       {isLoggedIn
         && (
         <div>
