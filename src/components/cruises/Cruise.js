@@ -18,6 +18,11 @@ function Cruise() {
   useEffect(() => {
     dispatch(getAllCruises(userId));
   }, []);
+
+  const handleCruiseId = (id) => {
+    localStorage.setItem('cruiseId', id);
+  };
+
   return (
     <div className="con">
       <div className="title-con">
@@ -77,7 +82,7 @@ function Cruise() {
             </section>
             <section className="b-sect">
               <div className="price-con"><p className="avg">{cruise.name}</p></div>
-              <Link to="/cruises/reservation" className="r-btn">
+              <Link to="/cruises/reservation" className="r-btn" onClick={handleCruiseId(cruise.id)}>
                 Reserve
               </Link>
             </section>
