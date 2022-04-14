@@ -26,20 +26,22 @@
   cursor: pointer;
 }
 
-.links-con li:hover {
-background-color: #97bf02!important;
+.links-con li:hover,
+a:hover {
+  background-color: #97bf02 !important;
+  color: white !important;
 }
-
 
 .links-con li,
 a {
-  text-decoration: none;
-  list-style: none;
-  color: rgb(13, 13, 24);
+  text-decoration: none !important;
+  list-style: none !important;
+  color: rgb(13, 13, 24) !important;
   font-size: 20px;
   font-weight: bolder;
 }
-.nav-cruise:hover > a{
+
+.nav-cruise:hover > a {
   color: #fff;
 }
 
