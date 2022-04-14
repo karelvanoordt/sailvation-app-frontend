@@ -25,7 +25,7 @@ export default function LoginPage() {
     return wrapper.appendChild(message);
   }
   const submitHandler = () => {
-    users.map((user) => {
+    users.data.map((user) => {
       if (user.email === userEmail) {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userId', `${user.id}`);
@@ -37,23 +37,23 @@ export default function LoginPage() {
     });
   };
   return (
-        <div className='container'>
-          <div className="form-container">
-            <div>
+        <div className='container mt-5'>
+          <div className="form-container d-flex">
+            <div className='m-4'>
               <h2>Don't you have a account</h2>
-              <Link to="/signup">You can Sign Up Here</Link>
+              <Link to="/signup" className='mt-3'>You can Sign Up Here</Link>
             </div> 
-            <form>
+            <form  className='m-4'>
               <div className="form-inner">
                 <h2>Login</h2>
-                <div className="form-group">
+                <div className="form-group mt-4">
                   <label htmlFor="email">
                     Email:
                     <input type="email" name="email" id="email" onChange={(e) => setUserEmail(e.target.value)} value={userEmail} />
                   </label>
                 </div>
                 <div id="wrong-email"></div>
-              <button type="submit" onClick={(e) => {
+              <button className='mt-3 btn btn-success' type="submit" onClick={(e) => {
                 e.preventDefault();
                 submitHandler();
               }}
@@ -66,5 +66,3 @@ export default function LoginPage() {
         </div>
   )
 }
-
-
