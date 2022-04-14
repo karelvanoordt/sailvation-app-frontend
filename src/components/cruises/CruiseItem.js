@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function CruiseItem({ cruise, handleDelete }) {
   useEffect(() => {}, [cruise]);
-  
-  const updateStorage = () =>{
-    localStorage.setItem('cruiseId',cruise.id )
-  }
-   
+
+  const updateStorage = () => {
+    localStorage.setItem('cruiseId', cruise.id);
+  };
+
   return (
     <li key={cruise.id} className="cruise-list-item">
       <div className="cruises-list-view">
@@ -24,7 +24,7 @@ function CruiseItem({ cruise, handleDelete }) {
         </p>
       </div>
       <div className="cruises-list-reserve-button-container">
-        <Link to={`/cruises/reservation`} onClick={updateStorage} className="gold-button">
+        <Link to="/cruises/reservation" onClick={updateStorage} className="gold-button">
           Reserve Now!
         </Link>
       </div>

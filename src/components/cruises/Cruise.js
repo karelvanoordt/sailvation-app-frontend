@@ -72,7 +72,7 @@ function Cruise() {
           </div>
           <div className="form-element">
             <label htmlFor="daily_price">
-              Daily Price: 
+              Daily Price:
               <input
                 type="number"
                 name="daily_price"
@@ -93,14 +93,14 @@ function Cruise() {
             >
               Save
             </button>
-            <button 
-            type="button"
-            className="gold-button"
-            onClick={() => {
-              setModalState(!modalState)
-            }}
+            <button
+              type="button"
+              className="gold-button"
+              onClick={() => {
+                setModalState(!modalState);
+              }}
             >
-            Cancel
+              Cancel
             </button>
           </div>
         </form>
