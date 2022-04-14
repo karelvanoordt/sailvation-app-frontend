@@ -14,7 +14,6 @@ function SignupForm() {
     if (details.name !== '' && details.email !== '') {
       dispatch(postNewUser(details));
       setIsLoggedIn(true);
-      console.log(isLoggedIn);
     }
   };
 

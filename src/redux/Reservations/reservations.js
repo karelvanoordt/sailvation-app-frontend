@@ -14,8 +14,8 @@ export const fetchAllReservations = (userId) => async (dispatch) => {
   });
 };
 
-export const postNewReservations = (newReservationData, user_id) => async (dispatch) => {
-  const payload = await apiCalls.postNewReservation(newReservationData, user_id);
+export const postNewReservations = (newReservationData, userId) => async (dispatch) => {
+  const payload = await apiCalls.postNewReservation(newReservationData, userId);
   dispatch({
     type: POST_NEW_RESERVATION,
     payload,

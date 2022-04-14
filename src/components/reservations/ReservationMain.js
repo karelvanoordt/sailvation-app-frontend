@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { fetchAllDestinations } from '../../redux/Destinations/destinations';
 import { getAllCruises } from '../../redux/Cruises/cruises';
@@ -32,7 +32,7 @@ const ReservationMain = () => {
 
   let image = '';
 
-  const [title, setTitle] = useState('Location');
+  const title = 'Location';
 
   if (cruises) {
     cruises.map((element) => {
@@ -53,7 +53,6 @@ const ReservationMain = () => {
         destination_id: parseInt(destinationId, 10),
       },
     };
-    console.log('postData', postData);
 
     dispatch(postNewReservations(postData, userid));
   };

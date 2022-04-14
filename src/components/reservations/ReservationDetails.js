@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from 'react-bootstrap/Card';
-import { useParams } from 'react-router-dom';
 import SingleReservation from './SingleReservation';
 import { deleteReservation, fetchAllReservations } from '../../redux/Reservations/reservations';
 import { getAllCruises } from '../../redux/Cruises/cruises';
@@ -32,7 +31,6 @@ const ReservationDetails = () => {
   useEffect(() => {
     dispatch(getAllCruises(userid));
     dispatch(fetchAllReservations(userid));
-    console.log(num);
   }, [num]);
 
   const cruises = useSelector((state) => state.cruisesReducer);
@@ -40,7 +38,6 @@ const ReservationDetails = () => {
   const destinations = useSelector((state) => state.destinationReducer.data);
   const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-  console.log(isLoggedIn);
   return (
     <>
       <h1 className="text-center m-4">Reservations</h1>
