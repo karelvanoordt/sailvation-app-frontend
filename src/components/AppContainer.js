@@ -5,7 +5,6 @@ import ReservationDetails from './reservations/ReservationDetails';
 import ReservationMain from './reservations/ReservationMain';
 import SignupForm from './login/SignupForm';
 import Login from './login/Login';
-import Destinations from './destinations/destinations';
 
 function AppContainer() {
   return (
@@ -22,9 +21,6 @@ function AppContainer() {
           <Route exact path="/">
             <Cruise />
           </Route>
-          {/* <Route path="/cruises/:id">
-            <Destinations path="/destinations" />
-          </Route> */}
           <Route path="/cruises/reservation">
             <ReservationMain path="/cruises/reservation" />
           </Route>
