@@ -20,7 +20,6 @@ function Destinations() {
   }, []);
 
   const destinations = useSelector((state) => state.destinationReducer);
-  console.log('dest Data', destinations.data);
 
   return (
     <div className="con">
@@ -34,8 +33,6 @@ function Destinations() {
         pagination={{
           type: 'fraction',
         }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         grabCursor
         breakpoints={{
         // when window width is >= 100px

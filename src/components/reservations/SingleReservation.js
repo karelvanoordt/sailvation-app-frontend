@@ -1,26 +1,25 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SingleReservation = ({ reservation, cruises, destinations }) => {
+  let destination = {};
 
-  let destination ={}
-
-  if(destinations) {
+  if (destinations) {
     destinations.map((destin) => {
-      if(destin.id === reservation.destination_id){
-        destination= destin
+      if (destin.id === reservation.destination_id) {
+        destination = destin;
       }
-    })
+    });
   }
 
-  return(
+  return (
     <div className="reservation-container">
       {
         cruises.map((cruise) => (
           cruise.id === reservation.cruise_id
           && (
-  
+
           <div className="d-flex">
             <div>
               <img alt="cruise" src={`${cruise.image}`} style={{ width: '200px', margin: '1rem 0' }} />
@@ -32,7 +31,7 @@ const SingleReservation = ({ reservation, cruises, destinations }) => {
                 :
                 {' '}
                 {destination.country}
-  
+
               </Card.Text>
               <Card.Text>
                 <strong>City:</strong>
@@ -46,13 +45,11 @@ const SingleReservation = ({ reservation, cruises, destinations }) => {
               </Card.Text>
             </div>
           </div>
-  
+
           )
         ))
       }
     </div>
-  )
-}
-
-;
+  );
+};
 export default SingleReservation;

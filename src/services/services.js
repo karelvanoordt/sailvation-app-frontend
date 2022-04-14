@@ -30,9 +30,7 @@ export const postNewCruise = async (newCruiseData, userId) => {
 
 // DELETE A CRUSE
 export const deleteCruise = async (userId, cruiseId) => {
-  console.log(userId, cruiseId);
   const deletedCruise = await axios.delete(`${BACK_END_URL}/users/${userId}/cruises/${cruiseId}`);
-  console.log(deletedCruise);
   return deletedCruise;
 };
 
@@ -43,8 +41,8 @@ export const fetchAllReservations = async (userId) => {
 };
 
 // POST NEW RESERVATION
-export const postNewReservation = async (newReservationData, user_id) => {
-  const newReservation = await axios.post(`${BACK_END_URL}/users/${user_id}/reservations`, newReservationData );
+export const postNewReservation = async (newReservationData, userId) => {
+  const newReservation = await axios.post(`${BACK_END_URL}/users/${userId}/reservations`, newReservationData);
   return newReservation;
 };
 

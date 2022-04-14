@@ -27,8 +27,6 @@ function Cruise() {
         pagination={{
           type: 'fraction',
         }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         grabCursor
         breakpoints={{
         // when window width is >= 100px

@@ -7,7 +7,6 @@ const initialUserState = [];
 
 export const fetchAllUsers = () => async (dispatch) => {
   const payload = await apiCalls.fetchAllUsers();
-  console.log(payload);
   dispatch({
     type: FETCH_ALL_USERS,
     payload,
