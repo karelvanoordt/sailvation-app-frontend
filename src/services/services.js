@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const BACK_END_URL = 'http://pacific-lake-89990.herokuapp.com/api/v1';
 // const BACK_END_URL = 'https://boiling-harbor-88832.herokuapp.com/api/v1';
-// const BACK_END_URL = 'https://pacific-lake-89990.herokuapp.com/api/v1';
+const BACK_END_URL = 'http://pacific-lake-89990.herokuapp.com/api/v1';
 
 // GET ALL USERS
 export const fetchAllUsers = async () => {
@@ -42,8 +41,8 @@ export const fetchAllReservations = async (userId) => {
 };
 
 // POST NEW RESERVATION
-export const postNewReservation = async (newReservationData, user_id) => {
-  const newReservation = await axios.post(`${BACK_END_URL}/users/${user_id}/reservations`, newReservationData );
+export const postNewReservation = async (newReservationData, userId) => {
+  const newReservation = await axios.post(`${BACK_END_URL}/users/${userId}/reservations`, newReservationData);
   return newReservation;
 };
 
