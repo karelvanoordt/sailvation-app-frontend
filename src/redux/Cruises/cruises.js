@@ -23,7 +23,8 @@ export const postNewCruise = (newCruiseData, userId) => async (dispatch) => {
 };
 
 export const deleteCruise = (userId, cruiseId) => async (dispatch) => {
-  await apiCalls.deleteCruise(userId, cruiseId);
+  console.log(userId,cruiseId)
+  await apiCalls.deleteCruise(userId, cruiseId).then(res => console.log(res));
   dispatch({
     type: DELETE_CRUISE,
     cruiseId,
