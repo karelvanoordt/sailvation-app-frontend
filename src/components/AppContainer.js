@@ -25,11 +25,8 @@ function AppContainer() {
           <Route path="/cruises/:id">
             <Destinations path="/destinations" />
           </Route>
-          <Route path="/:userid/cruises/:cruiseid/reservation">
-            <ReservationMain path="/:userid/cruises/:cruiseid/reservation" />
-          </Route>
-          <Route path="/:userid/reservations">
-            <ReservationDetails path="/:userid/reservations" />
+          <Route>
+            <ReservationDetails path="/cruises/:id/reservation/:id/destination" />
           </Route>
         </Switch>
       </div>
