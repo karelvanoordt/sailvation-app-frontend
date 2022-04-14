@@ -4,17 +4,16 @@ import '../../styles/nav.css';
 import {
   FaTwitter, FaFacebook, FaVimeo, FaInstagram, FaPinterest,
 } from 'react-icons/fa';
-import img from '../../styles/Sail.png'
+import img from '../../styles/Sail.png';
 
 function Nav() {
-
-  const updateStorage = () =>{
-    localStorage.setItem('cruiseId', 0 )
-  }
+  const updateStorage = () => {
+    localStorage.setItem('cruiseId', 0);
+  };
   return (
     <div className="nav-con">
-      <div clasName='logo-con'>
-        <img src={img} alt="Sailvation logo" className="logo"/>
+      <div clasName="logo-con">
+        <img src={img} alt="Sailvation logo" className="logo" />
       </div>
       <nav className="links-con">
         <ul>
@@ -24,7 +23,6 @@ function Nav() {
           <li className="nav-cruise">
             <Link to="/reservations">Reservations</Link>
           </li>
-          
           <li className="nav-cruise">
             <Link to="/cruises/reservation" onClick={updateStorage}>Make a reservation</Link>
           </li>
@@ -35,28 +33,28 @@ function Nav() {
             <Link to="/login">Login</Link>
           </li>
           <li className="nav-cruise">
-          <Link to="/signup">Sign Up</Link>
+            <Link to="/signup">Sign Up</Link>
           </li>
         </ul>
       </nav>
       <section>
-      <div className="icons">
-        <FaTwitter style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
-        <FaFacebook style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
-        <FaVimeo style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
-        <FaInstagram style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
-        <FaPinterest style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
-      </div>
-      <div className="pub">
-        <p>
-          &copy;
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-          Sailvation Cruises.
-        </p>
-      </div>
-    </section>
+        <div className="icons">
+          <FaTwitter style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
+          <FaFacebook style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
+          <FaVimeo style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
+          <FaInstagram style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
+          <FaPinterest style={{ color: 'black', fontSize: '1rem', margin: '6px' }} />
+        </div>
+        <div className="pub">
+          <p>
+            &copy;
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            Sailvation Cruises.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

@@ -26,12 +26,6 @@
   cursor: pointer;
 }
 
-.links-con li:hover,
-a:hover {
-  background-color: #97bf02 !important;
-  color: white !important;
-}
-
 .links-con li,
 a {
   text-decoration: none !important;
@@ -39,6 +33,12 @@ a {
   color: rgb(13, 13, 24) !important;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.links-con li:hover,
+a:hover {
+  background-color: #97bf02 !important;
+  color: white !important;
 }
 
 .nav-cruise:hover > a {
