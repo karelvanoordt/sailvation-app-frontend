@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page is working fine renders Login 1`] = `
+<div
+  className="container mt-5"
+>
+  <div
+    className="form-container d-flex"
+  >
+    <div
+      className="m-4"
+    >
+      <h2>
+        Don't you have a account
+      </h2>
+      <a
+        className="mt-3"
+        href="/signup"
+        onClick={[Function]}
+      >
+        You can Sign Up Here
+      </a>
+    </div>
+    <form
+      className="m-4"
+    >
+      <div
+        className="form-inner"
+      >
+        <h2>
+          Login
+        </h2>
+        <div
+          className="form-group mt-4"
+        >
+          <label
+            htmlFor="email"
+          >
+            Email:
+            <input
+              id="email"
+              name="email"
+              onChange={[Function]}
+              type="email"
+              value=""
+            />
+          </label>
+        </div>
+        <div
+          id="wrong-email"
+        />
+        <button
+          className="mt-3 btn btn-success"
+          onClick={[Function]}
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

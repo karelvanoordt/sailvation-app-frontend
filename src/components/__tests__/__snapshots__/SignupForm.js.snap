@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page is working fine renders Login 1`] = `
+<div
+  className="container mt-5"
+>
+  <div
+    className="m-4"
+  >
+    <h2>
+      Already Have an Account?
+    </h2>
+    <a
+      className="btn btn-success mt-3"
+      href="/login"
+      onClick={[Function]}
+    >
+      You can login from here
+    </a>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-inner m-4"
+    >
+      <h2>
+        Signup
+      </h2>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="name"
+        >
+          Name:
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="form-group mt-3"
+      >
+        <label
+          htmlFor="email"
+        >
+          Email:
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            type="email"
+            value=""
+          />
+        </label>
+      </div>
+      <input
+        className="btn btn-success mt-3"
+        disabled={false}
+        type="submit"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Signup page is working fine renders Signup 1`] = `
+<div
+  className="container mt-5"
+>
+  <div
+    className="m-4"
+  >
+    <h2>
+      Already Have an Account?
+    </h2>
+    <a
+      className="btn btn-success mt-3"
+      href="/login"
+      onClick={[Function]}
+    >
+      You can login from here
+    </a>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-inner m-4"
+    >
+      <h2>
+        Signup
+      </h2>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="name"
+        >
+          Name:
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className="form-group mt-3"
+      >
+        <label
+          htmlFor="email"
+        >
+          Email:
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            type="email"
+            value=""
+          />
+        </label>
+      </div>
+      <input
+        className="btn btn-success mt-3"
+        disabled={false}
+        type="submit"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;

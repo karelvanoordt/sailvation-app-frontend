@@ -20,7 +20,6 @@ const SingleReservation = ({ reservation, cruises, destinations }) => {
         cruises.map((cruise) => (
           cruise.id === reservation.cruise_id
           && (
-
           <div className="d-flex">
             <div>
               <img alt="cruise" src={`${cruise.image}`} style={{ width: '200px', margin: '1rem 0' }} />
