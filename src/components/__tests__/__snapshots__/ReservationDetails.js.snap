@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReservationDetails page is working fine renders ReservationDetails 1`] = `
+Array [
+  <h1
+    className="text-center m-4"
+  >
+    Reservations
+  </h1>,
+  <h1
+    className="text-center"
+  >
+     You have to Log in
+  </h1>,
+]
+`;
