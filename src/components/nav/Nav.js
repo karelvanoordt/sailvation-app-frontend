@@ -12,7 +12,7 @@ function Nav() {
   };
   return (
     <div className="nav-con">
-      <div clasName="logo-con">
+      <div className="logo-con">
         <img src={img} alt="Sailvation logo" className="logo" />
       </div>
       <nav className="links-con">
